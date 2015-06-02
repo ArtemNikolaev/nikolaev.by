@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta charset="utf-8" name=viewport content="width=device-width, initial-scale=1">
+    <title>Nikolaev.by</title>
+    <link rel="icon"
+          type="image/png"
+          href="data:image/x-icon;base64,AAABAAEAICAQAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAgAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//AAD///8AAAAAAAAAAAd3AAAAAAAAAAAAAAAAAAeAgIcAAAAAAAAAAAAAAACAAIAAgAAAAAAAAAAAAABwAACAAAhwAAAAAAAAAAB4AAAAgAAICHAAAAAAAAAIAAAACHAACAAIcAAAAAAICAAACICAAAgAAAgAAAAHAAgACIAAgAAIAAAABwAAcAAIAIgAAIAACIAAAABwAIAACIgIAACAAAgIgAAAcACAAAgACAAAeAAIAAiAAHAAgAAIAAgAAICICAAIiABwAIAACAAIAACAAIgACAAAcACAAAgAiAAAgAAAgAgAAHAAgAAIiAgAAIAAAAiIAABwAIAAiAAIAAh4AAAACAAAcACACAAACAiAAIgAAAgAAHAAeIAAAAh4AAAIgAAIAABwAHAAAACIAAAACIiACAAAcACAAACIAAAAAIAACIgAAHAAgAAHgAAAAIgAAACHgABwAIAIgIgAAIgIgAAAAIgAcAB4gAAAgAgAAAgAAAAAiHAABwAAAAiAAAAAiAAAAAcAAAB4AAAACIAAiACIAAhwAAAAAHAAAAAIiAAAAIhwAAAAAAAAgAAACIAAAACAAAAAAAAAAAeACIAAAACHAAAAAAAAAAAAB3AAAACHAAAAAAAAAAAAAAAHAAAHAAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAD//j////gP///wB///wAH//wAAf/4AAB/4AAAP4AAAA8AAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAeAAAAPwAAAH/AAAH/8AAH//gAD//+AD///4D////j////9//w==">
+    <style>
+        /* line 1, ../sass/styles.scss */
+        body {
+            background: black;
+            font-family: 'Varela', sans-serif;
+        }
+
+        @media (min-width: 900px) {
+            /* line 6, ../sass/styles.scss */
+            #name {
+                font-size: 100px;
+            }
+
+            /* line 9, ../sass/styles.scss */
+            .glitch {
+                font-size: 50px;
+            }
+        }
+        @media (max-width: 899px) {
+            /* line 14, ../sass/styles.scss */
+            #name {
+                font-size: 50px;
+            }
+
+            /* line 17, ../sass/styles.scss */
+            .glitch {
+                font-size: 30px;
+            }
+        }
+        @media (max-width: 500px) {
+            /* line 22, ../sass/styles.scss */
+            #name {
+                font-size: 25px;
+            }
+
+            /* line 25, ../sass/styles.scss */
+            .glitch {
+                font-size: 14px;
+            }
+        }
+        /* line 29, ../sass/styles.scss */
+        #main {
+            position: absolute;
+            right: 10px;
+        }
+
+        /* line 33, ../sass/styles.scss */
+        .glitch {
+            color: white;
+            position: relative;
+        }
+
+        @keyframes noise-anim {
+            0% {
+                clip: rect(93px, 9999px, 12px, 0);
+            }
+            5% {
+                clip: rect(48px, 9999px, 73px, 0);
+            }
+            10% {
+                clip: rect(51px, 9999px, 28px, 0);
+            }
+            15.0% {
+                clip: rect(44px, 9999px, 23px, 0);
+            }
+            20% {
+                clip: rect(48px, 9999px, 36px, 0);
+            }
+            25% {
+                clip: rect(94px, 9999px, 71px, 0);
+            }
+            30.0% {
+                clip: rect(100px, 9999px, 10px, 0);
+            }
+            35% {
+                clip: rect(71px, 9999px, 6px, 0);
+            }
+            40% {
+                clip: rect(50px, 9999px, 11px, 0);
+            }
+            45% {
+                clip: rect(79px, 9999px, 28px, 0);
+            }
+            50% {
+                clip: rect(98px, 9999px, 37px, 0);
+            }
+            55.0% {
+                clip: rect(77px, 9999px, 74px, 0);
+            }
+            60.0% {
+                clip: rect(31px, 9999px, 67px, 0);
+            }
+            65% {
+                clip: rect(92px, 9999px, 49px, 0);
+            }
+            70% {
+                clip: rect(88px, 9999px, 60px, 0);
+            }
+            75% {
+                clip: rect(16px, 9999px, 51px, 0);
+            }
+            80% {
+                clip: rect(87px, 9999px, 85px, 0);
+            }
+            85.0% {
+                clip: rect(20px, 9999px, 51px, 0);
+            }
+            90% {
+                clip: rect(50px, 9999px, 84px, 0);
+            }
+            95% {
+                clip: rect(76px, 9999px, 61px, 0);
+            }
+            100% {
+                clip: rect(55px, 9999px, 65px, 0);
+            }
+        }
+        /* line 45, ../sass/styles.scss */
+        .glitch:after {
+            content: attr(data-text);
+            position: absolute;
+            left: 2px;
+            text-shadow: -1px 0 red;
+            top: 0;
+            color: white;
+            background: black;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: noise-anim 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes noise-anim-2 {
+            0% {
+                clip: rect(63px, 9999px, 45px, 0);
+            }
+            5% {
+                clip: rect(55px, 9999px, 73px, 0);
+            }
+            10% {
+                clip: rect(28px, 9999px, 85px, 0);
+            }
+            15.0% {
+                clip: rect(74px, 9999px, 81px, 0);
+            }
+            20% {
+                clip: rect(29px, 9999px, 33px, 0);
+            }
+            25% {
+                clip: rect(8px, 9999px, 40px, 0);
+            }
+            30.0% {
+                clip: rect(48px, 9999px, 90px, 0);
+            }
+            35% {
+                clip: rect(53px, 9999px, 2px, 0);
+            }
+            40% {
+                clip: rect(55px, 9999px, 88px, 0);
+            }
+            45% {
+                clip: rect(78px, 9999px, 15px, 0);
+            }
+            50% {
+                clip: rect(84px, 9999px, 27px, 0);
+            }
+            55.0% {
+                clip: rect(82px, 9999px, 91px, 0);
+            }
+            60.0% {
+                clip: rect(20px, 9999px, 62px, 0);
+            }
+            65% {
+                clip: rect(73px, 9999px, 48px, 0);
+            }
+            70% {
+                clip: rect(78px, 9999px, 62px, 0);
+            }
+            75% {
+                clip: rect(37px, 9999px, 60px, 0);
+            }
+            80% {
+                clip: rect(78px, 9999px, 12px, 0);
+            }
+            85.0% {
+                clip: rect(62px, 9999px, 27px, 0);
+            }
+            90% {
+                clip: rect(55px, 9999px, 100px, 0);
+            }
+            95% {
+                clip: rect(6px, 9999px, 53px, 0);
+            }
+            100% {
+                clip: rect(80px, 9999px, 65px, 0);
+            }
+        }
+        /* line 66, ../sass/styles.scss */
+        .glitch:before {
+            content: attr(data-text);
+            position: absolute;
+            left: -2px;
+            text-shadow: 1px 0 blue;
+            top: 0;
+            color: white;
+            background: black;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: noise-anim-2 3s infinite linear alternate-reverse;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="name" class="glitch" data-text="ArtemNikolaev">ArtemNikolaev</div>
+    <div class="glitch" data-text="artem@nikolaev.by">artem@nikolaev.by</div>
+</div>
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+</body>
+</html>
