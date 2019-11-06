@@ -1,0 +1,39 @@
+body{
+    background:black;
+    font-family: sans-serif;
+}
+
+#main {
+    position: absolute;
+    right: 10px;
+}
+
+.glitch{
+    color:white;
+    position:relative;
+}
+
+@media (min-width: 900px) {
+    #name {
+        font-size: 100px;
+    }
+    .glitch {
+        font-size: 50px;
+    }
+}
+@media (max-width: 899px) {
+    #name {
+        font-size: 50px;
+    }
+    .glitch {
+        font-size: 30px;
+    }
+}
+@media (max-width: 500px) {
+    #name {
+        font-size: 25px;
+    }
+    .glitch {
+        font-size: 14px;
+    }
+}
