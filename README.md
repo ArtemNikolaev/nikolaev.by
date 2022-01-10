@@ -7,7 +7,7 @@
 ## Requirements
 
 ```
-NodeJS: 13.x // not works on higher versions
+NodeJS: 14.x
 ```
 
 ## Build
