@@ -2,6 +2,7 @@ const { src, dest, series } = require('gulp');
 const pugBuilder = require('gulp-pug');
 const sassBuilder = require('gulp-sass');
 const cleanCSS = require('gulp-clean-css');
+const del = require('del');
 
 function pug() {
   return src('./src/pug/*.pug')
@@ -20,7 +21,7 @@ function sass() {
     .pipe(dest('./temp/css'));
 }
 
-function minify() {
+function minifyCSS() {
   return src('./temp/css/*.css')
     .pipe(cleanCSS())
     .pipe(dest('./temp/css-min'));
@@ -31,4 +32,8 @@ function staticFiles() {
     .pipe(dest('./public'));
 }
 
-exports.default = series(sass, css, minify, pug, staticFiles);
+function delTemp() {
+  return del('./temp');
+}
+
+exports.default = series(sass, css, minifyCSS, pug, staticFiles, delTemp);
