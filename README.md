@@ -7,7 +7,7 @@
 ## Requirements
 
 ```
-NodeJS: 14.x
+NodeJS: 18.x
 ```
 
 ## Build

@@ -1,8 +1,8 @@
+const fs = require('fs');
 const { src, dest, series } = require('gulp');
 const pugBuilder = require('gulp-pug');
-const sassBuilder = require('gulp-sass');
+const sassBuilder = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
-const del = require('del');
 
 function pug() {
   return src('./src/pug/*.pug')
@@ -17,7 +17,7 @@ function css() {
 
 function sass() {
   return src('./src/sass/*.scss')
-    .pipe(sassBuilder.sync().on('error', sassBuilder.logError))
+    .pipe(sassBuilder().on('error', sassBuilder.logError))
     .pipe(dest('./temp/css'));
 }
 
@@ -33,7 +33,10 @@ function staticFiles() {
 }
 
 function delTemp() {
-  return del('./temp');
+  // TODOAR: обновить до версии с promise
+  return new Promise( res => {
+    fs.rmdir('./temp', {recursive: true, force: true}, res);
+  })
 }
 
 exports.default = series(sass, css, minifyCSS, pug, staticFiles, delTemp);
