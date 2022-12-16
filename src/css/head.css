@@ -8,9 +8,13 @@ body{
     right: 10px;
 }
 
-.glitch{
+.glitch {
     color:white;
     position:relative;
+}
+
+a.glitch {
+    text-decoration:none;
 }
 
 @media (min-width: 900px) {
